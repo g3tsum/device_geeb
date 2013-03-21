@@ -217,7 +217,7 @@ on post-fs-data
     rm /data/local/tmp/adreno_config.txt
 
     # LED On/Off synchronization
-    # chown system system /sys/class/leds/red/device/lock
+    chown system system /sys/class/leds/red/device/lock
 	
    # Geeb leds owner should be system
     chown system system /sys/class/leds/led:red/brightness

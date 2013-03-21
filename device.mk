@@ -237,7 +237,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=45
+	wifi.supplicant_scan_interval=120
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -254,6 +254,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
+
+# Charging LED property
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.enable-charging-led=0
 
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
