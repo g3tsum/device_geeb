@@ -255,10 +255,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
-# Charging LED property
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.enable-charging-led=0
-
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
 PRODUCT_COPY_FILES += \
