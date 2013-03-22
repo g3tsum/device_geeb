@@ -37,7 +37,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # BUILD KERNEL
 TARGET_KERNEL_CONFIG := geeb_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/geebca
+TARGET_KERNEL_SOURCE := kernel/lge/geeb
 # TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
 # BOARD_VENDOR := lge
