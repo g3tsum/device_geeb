@@ -123,11 +123,16 @@ else
     NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access_debug.xml
 endif
 
+# Commands to migrate prefs from com.android.nfc3 to com.android.nfc
+PRODUCT_COPY_FILES += \
+    packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt
+
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
@@ -202,7 +207,7 @@ PRODUCT_PACKAGES += \
 	libmmcamera_interface
 
 PRODUCT_PACKAGES += \
-        libmm-omxcore \
+    libmm-omxcore \
 	libdivxdrmdecrypt \
 	libOmxVdec \
 	libOmxVenc \
