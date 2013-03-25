@@ -216,16 +216,21 @@ on post-fs-data
 
     rm /data/local/tmp/adreno_config.txt
 
-    # LED On/Off synchronization
-    chown system system /sys/class/leds/red/device/lock
-	
-   # Geeb leds owner should be system
+    chown system system /sys/class/leds/keyboard-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/led:red/brightness
     chown system system /sys/class/leds/led:green/brightness
-    chown system system /sys/class/leds/led:red/trigger
-    chown system system /sys/class/leds/led:green/trigger
-    chown system system /sys/class/leds/button-backlight/brightness
-    chown system system /sys/class/leds/button-backlight/trigger
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
 
     # communicate with mpdecision and thermald
     mkdir /dev/socket/mpdecision 0770 system system
