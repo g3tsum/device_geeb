@@ -23,7 +23,11 @@
     <bool name="config_animateScreenLights">false</bool>
 
     <!-- Default color for notification LED is RED. -->
+<<<<<<< HEAD
     <color name="config_defaultNotificationColor">#ff0000</color>
+=======
+    <color name="config_defaultNotificationColor">#FF0000</color>
+>>>>>>> fixed mdpcomp
 
     <!-- Default LED on time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOn">500</integer>
