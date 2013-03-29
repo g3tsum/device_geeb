@@ -61,7 +61,9 @@ PRODUCT_COPY_FILES += \
 	device/lge/geeb/ueventd.geeb.rc:root/ueventd.geeb.rc \
 	device/lge/geeb/media_profiles.xml:system/etc/media_profiles.xml \
 	device/lge/geeb/media_codecs.xml:system/etc/media_codecs.xml \
-	device/lge/geeb/efsbackup.sh:system/bin/efsbackup.sh
+	device/lge/geeb/efsbackup.sh:system/bin/efsbackup.sh \
+	device/lge/geeb/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
+	device/lge/geeb/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh
 
 PRODUCT_COPY_FILES += \
 	device/lge/geeb/kickstart_checker.sh:system/etc/kickstart_checker.sh
