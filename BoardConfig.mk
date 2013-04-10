@@ -14,13 +14,18 @@
 # limitations under the License.
 #
 
-TARGET_CPU_VARIANT := krait
+TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mtune=cortex-a15 -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mtune=cortex-a15 -mfloat-abi=softfp
+TARGET_EXTRA_CFLAGS := -mtune=cortex-a15 -mcpu=cortex-a15
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
-ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_ARMV7A := true
+TARGET_ARCH_VARIANT_CPU := cortex-a15
+TARGET_CPU_VARIANT := cortex-a15
+
 ARCH_ARM_HIGH_OPTIMIZATION := true
 
 # Krait optimizations
