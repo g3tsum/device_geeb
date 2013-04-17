@@ -105,7 +105,6 @@
 /dev/snd/mixer            0660   system     audio
 /dev/msm_pcm_lp_dec       0660   system     audio
 /dev/msm_dsps             0600   system     system
-/dev/bcm2079x-i2c         0660   nfc        nfc
 /dev/qseecom              0666   system     drmrpc
 /dev/diag                 0666   root       root
 /dev/diag_arm9            0660   radio      radio
@@ -164,6 +163,7 @@
 /dev/msm_hw3dc            0666   root       root
 
 # yongmin.jung@lge.com 2012.07.10 change qcks, ks, efsks into system process
+/dev/block/mmcblk0p1      0660   root       system
 /dev/block/mmcblk0p12     0660   system     system
 /dev/block/mmcblk0p13     0660   system     system
 /dev/block/mmcblk0p14     0660   system     system
