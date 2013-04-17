@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_EXTRA_CFLAGS := -mtune=cortex-a9 -mcpu=cortex-a9
+TARGET_EXTRA_CFLAGS := -mtune=cortex-a9 -mcpu=cortex-a9 -fno-inline-functions -fno-ipa-cp-clone -fno-unswitch-loops -fno-tree-vectorize
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -32,11 +32,6 @@ TARGET_KRAIT_BIONIC_PLDOFFS := 10
 TARGET_KRAIT_BIONIC_PLDTHRESH := 10
 TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
-
-# Webkit
-ENABLE_WEBGL := true
-#TARGET_FORCE_CPU_UPLOAD := true
 
 # BUILD KERNEL
 TARGET_KERNEL_CONFIG := geeb_defconfig
