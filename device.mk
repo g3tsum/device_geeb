@@ -140,8 +140,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=320 \
-	gsm.version.baseband=APQ8064/MDM9x15M
+	ro.sf.lcd_density=320
+
+# Script for baseband name resolution
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fetch-swv:system/bin/fetch-swv
+
 
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
