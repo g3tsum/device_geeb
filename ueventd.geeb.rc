@@ -163,7 +163,6 @@
 /dev/msm_hw3dc            0666   root       root
 
 # yongmin.jung@lge.com 2012.07.10 change qcks, ks, efsks into system process
-/dev/block/mmcblk0p1      0660   root       system
 /dev/block/mmcblk0p12     0660   system     system
 /dev/block/mmcblk0p13     0660   system     system
 /dev/block/mmcblk0p14     0660   system     system

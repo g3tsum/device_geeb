@@ -414,6 +414,7 @@ service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
     class late_start
 
 service thermald /system/bin/thermald
+    disabled
     class main
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
@@ -443,9 +444,9 @@ service bugreport /system/bin/bugmailer.sh -v
     oneshot
     keycodes 114 115 116
 
-service fetch-swv /system/bin/fetch-swv
-    class late_start
-    oneshot
+# service fetch-swv /system/bin/fetch-swv
+#    class late_start
+#    oneshot
 
 service qseecomd /system/bin/qseecomd
     class late_start

@@ -205,7 +205,7 @@
         <item>11</item>
         <item>12</item>
         <item>22</item>
-		</integer-array>
+    </integer-array>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -216,7 +216,7 @@
     <!-- Vibrator pattern for feedback about touching a virtual key -->
    <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>25</item>
+        <item>20</item>
     </integer-array>
     
     <!-- Specifies the amount of time to disable virtual keys after the screen is touched
@@ -224,7 +224,7 @@
          or taps near the edge of the display.  May be 0 to disable the feature.
          It is recommended that this value be no more than 250 ms.
          This feature should be disabled for most devices. -->
-    <integer name="config_virtualKeyQuietTimeMillis">0</integer>
+    <integer name="config_virtualKeyQuietTimeMillis">250</integer>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
