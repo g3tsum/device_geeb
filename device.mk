@@ -28,8 +28,8 @@ DEVICE_PACKAGE_OVERLAYS := device/lge/geeb/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_PACKAGES := \
-	lights.geeb
+# PRODUCT_PACKAGES := \
+#	lights.geeb
 
 PRODUCT_PACKAGES += \
     charger_res_images \
@@ -271,4 +271,4 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # This is the geeb-specific audio package
-$(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
+# $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
