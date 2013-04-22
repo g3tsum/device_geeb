@@ -237,6 +237,8 @@ on post-fs-data
 
     # adjust vibrator amplitude
     write /sys/class/timed_output/vibrator/amp 70
+    chmod 0660 /sys/class/time_output/vibrator/pwm
+    chown system system /sys/class/time_output/vibrator/pwm
 
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
