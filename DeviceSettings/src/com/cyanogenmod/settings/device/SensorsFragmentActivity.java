@@ -65,7 +65,7 @@ public class SensorsFragmentActivity extends PreferenceFragment {
 
         Log.w(TAG, "key: " + key);
 
-        else if (key.compareTo(DeviceSettings.KEY_TOUCHKEY_LIGHT) == 0) {
+        if (key.compareTo(DeviceSettings.KEY_TOUCHKEY_LIGHT) == 0) {
             Utils.writeValue(FILE_TOUCHKEY_TOGGLE, ((CheckBoxPreference)preference).isChecked() ? "255" : "0");
         } else if (key.compareTo(DeviceSettings.KEY_TOUCHKEY_BLN) == 0) {
             Utils.writeValue(FILE_BLN_TOGGLE, ((CheckBoxPreference)preference).isChecked() ? "1" : "0");
