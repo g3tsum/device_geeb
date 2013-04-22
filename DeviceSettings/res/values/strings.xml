@@ -8,8 +8,6 @@
     <string name="touchkey_light_summary_head">Light up touch keys when screen is on</string>
     <string name="touchkey_bln_title_head">Enable keys notifications</string>
     <string name="touchkey_bln_summary_head">Light up touch keys when screen is off, and a notification is received</string>
-    <string name="keyboard_light_title_head">Enable keyboard backlight</string>
-    <string name="keyboard_light_summary_head">Light up keyboard backlight when screen is on</string>
 
     <string name="category_haptic_title">Haptic</string>
     <string name="vibrator_subcat_title">Vibrator</string>
