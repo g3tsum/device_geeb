@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
 package com.cyanogenmod.settings.device;
-
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -30,53 +28,39 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-
 import com.cyanogenmod.settings.device.R;
-
 
 public class HapticFragmentActivity extends PreferenceFragment {
 
-
     private static final String PREF_ENABLED = "1";
     private static final String TAG = "OptimusGParts_Haptic";
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         addPreferencesFromResource(R.xml.haptic_preferences);
-
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-
     }
-
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
-
         String boxValue;
         String key = preference.getKey();
 
-
         Log.w(TAG, "key: " + key);
-
 
         return true;
     }
-
 
     public static boolean isSupported(String FILE) {
         return Utils.fileExists(FILE);
     }
 
-
     public static void restore(Context context) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 }
-

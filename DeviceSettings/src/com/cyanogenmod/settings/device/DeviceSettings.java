@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
 package com.cyanogenmod.settings.device;
-
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -29,16 +27,20 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-
 import com.cyanogenmod.settings.device.R;
-
 
 import java.util.ArrayList;
 
-
 public class DeviceSettings extends FragmentActivity {
 
+    public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
+    public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
+	public static final String KEY_TOUCHKEY_LIGHT = "touchkey_light";
+    public static final String KEY_TOUCHKEY_BLN = "touchkey_bln";
     public static final String KEY_VIBRATOR_INTENSITY = "vibrator_intensity";
+
+    public static final String CATEGORY_SENSORS = "sensors";
+    public static final String CATEGORY_TOUCHKEY = "touchkey";
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
@@ -57,6 +59,8 @@ public class DeviceSettings extends FragmentActivity {
         bar.setTitle(R.string.app_name);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
+        mTabsAdapter.addTab(bar.newTab().setText(R.string.category_sensors_title),
+                SensorsFragmentActivity.class, null); 
         mTabsAdapter.addTab(bar.newTab().setText(R.string.category_haptic_title),
                 HapticFragmentActivity.class, null);
         if (savedInstanceState != null) {
@@ -64,7 +68,30 @@ public class DeviceSettings extends FragmentActivity {
         }
     }
 
-        public TabsAdapter(Activity activity, ViewPager pager) {
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("tab", getActionBar().getSelectedNavigationIndex());
+    }
+
+    public static class TabsAdapter extends FragmentPagerAdapter
+            implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
+        private final Context mContext;
+        private final ActionBar mActionBar;
+        private final ViewPager mViewPager;
+        private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
+
+        static final class TabInfo {
+            private final Class<?> clss;
+            private final Bundle args;
+
+            TabInfo(Class<?> _class, Bundle _args) {
+                clss = _class;
+                args = _args;
+            }
+        }
+
+	public TabsAdapter(Activity activity, ViewPager pager) {
             super(activity.getFragmentManager());
             mContext = activity;
             mActionBar = activity.getActionBar();
@@ -72,7 +99,6 @@ public class DeviceSettings extends FragmentActivity {
             mViewPager.setAdapter(this);
             mViewPager.setOnPageChangeListener(this);
         }
-
 
         public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args) {
             TabInfo info = new TabInfo(clss, args);
@@ -83,12 +109,10 @@ public class DeviceSettings extends FragmentActivity {
             notifyDataSetChanged();
         }
 
-
         @Override
         public int getCount() {
             return mTabs.size();
         }
-
 
         @Override
         public Fragment getItem(int position) {
@@ -96,19 +120,15 @@ public class DeviceSettings extends FragmentActivity {
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
         }
 
-
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
-
 
         public void onPageSelected(int position) {
             mActionBar.setSelectedNavigationItem(position);
         }
 
-
         public void onPageScrollStateChanged(int state) {
         }
-
 
         public void onTabSelected(Tab tab, FragmentTransaction ft) {
             Object tag = tab.getTag();
@@ -119,7 +139,6 @@ public class DeviceSettings extends FragmentActivity {
             }
         }
 
-
         public void onTabUnselected(Tab tab, FragmentTransaction ft) {
         }
 
@@ -128,4 +147,3 @@ public class DeviceSettings extends FragmentActivity {
         }
     }
 }
-
