@@ -213,14 +213,6 @@ on post-fs-data
 
     rm /data/local/tmp/adreno_config.txt
 
-    # Geeb leds owner should be system
-    chown system system /sys/class/leds/led:red/brightness
-    chown system system /sys/class/leds/led:green/brightness
-    chown system system /sys/class/leds/led:red/trigger
-    chown system system /sys/class/leds/led:green/trigger
-    chown system system /sys/class/leds/button-backlight/brightness
-    chown system system /sys/class/leds/button-backlight/trigger
-
     # Net permissions
     chown system system /sys/kernel/ipv4/tcp_wmem_min
     chown system system /sys/kernel/ipv4/tcp_wmem_def
@@ -235,14 +227,51 @@ on post-fs-data
     mkdir /dev/socket/mpdecision 0770 system system
     chmod 2770 /dev/socket/mpdecision
 
+    # LED On/Off synchronization
+    chown system system /sys/class/leds/red/device/lock
+
+    chmod 644 /sys/class/leds/button-backlight/brightness
+    chmod 646 /sys/class/leds/red/brightness
+    chmod 646 /sys/class/leds/green/brightness
+    chmod 646 /sys/class/leds/blue/brightness
+
     # Enable vibrate
     chown system system /sys/class/timed_output/vibrator/enable
-	chown system system /sys/class/time_output/vibrator/amp
+    chown system system /sys/class/timed_output/vibrator/amp
 
     # adjust vibrator amplitude
     write /sys/class/timed_output/vibrator/amp 70
-	chmod 0666 /sys/class/timed_output/vibrator/enable
     chmod 0660 /sys/class/timed_output/vibrator/amp
+    chmod 0660 /sys/class/timed_output/vibrator/pwm
+    chown system system /sys/class/timed_output/vibrator/pwm
+
+    # LED devices
+    chown system system /sys/class/leds/led:red/brightness
+    chown system system /sys/class/leds/led:red/max_brightness
+    chown system system /sys/class/leds/led:red/trigger
+
+    chown system system /sys/class/leds/led:green/brightness
+    chown system system /sys/class/leds/led:green/max_brightness
+    chown system system /sys/class/leds/led:green/trigger
+
+    chown system system /sys/class/leds/led:blue/brightness
+    chown system system /sys/class/leds/led:blue/max_brightness
+    chown system system /sys/class/leds/led:blue/trigger
+
+    chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/button-backlight/max_brightness
+
+    chmod 644 /sys/class/leds/led:red/brightness
+    chmod 644 /sys/class/leds/led:green/brightness
+    chmod 644 /sys/class/leds/led:blue/brightness
+    chmod 644 /sys/class/leds/led:red/trigger
+    chmod 644 /sys/class/leds/led:green/trigger
+    chmod 644 /sys/class/leds/led:blue/trigger
+    chmod 644 /sys/class/leds/led:red/max_brightness
+    chmod 644 /sys/class/leds/led:green/max_brightness
+    chmod 644 /sys/class/leds/led:blue/max_brightness
+    chmod 644 /sys/class/leds/button-backlight/brightness
+    chmod 644 /sys/class/leds/button-backlight/max_brightness
 
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
