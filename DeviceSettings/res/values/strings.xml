@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Advanced Settings</string>
+    <string name="app_name">Advanced settings</string>
 
     <string name="category_sensors_title">Sensors</string>
 	<string name="touchkey_subcat_title">Touch key</string>
