@@ -26,7 +26,8 @@
             </intent-filter>
         </receiver>
       
-        <activity android:name=".mDNIeFragmentActivity" />
+        <activity android:name=".HapticFragmentActivity" />
+        <activity android:name=".SensorsFragmentActivity" />
         
     </application>
 </manifest>
