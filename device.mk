@@ -193,6 +193,10 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler
 
 PRODUCT_PACKAGES += \
+        OptimusGSettings
+
+PRODUCT_PACKAGES += \
+>>>>>>> 29b0502... derp
 	hci_qcomm_init
 
 PRODUCT_PACKAGES += \
