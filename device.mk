@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler
 
 PRODUCT_PACKAGES += \
-     OptimusGSettings \
+    OptimusGSettings
 
 PRODUCT_PACKAGES += \
 	hci_qcomm_init
