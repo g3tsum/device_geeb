@@ -1,3 +1,22 @@
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+
+ro.ril.transmitpower=true
+
+ro.bluetooth.request.master=false
+ro.bluetooth.remote.autoconnect=true
+ro.qc.sdk.sensors.gestures=true
+
 # About Phone / Hardware Info
 ro.device.chipset=Qualcomm Snapdragon S4 Pro APQ8064
 ro.device.cpu=1.5 GHz Quad-Core Krait
