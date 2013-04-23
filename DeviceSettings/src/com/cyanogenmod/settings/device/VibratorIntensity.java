@@ -24,12 +24,15 @@ import android.preference.Preference;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
+import android.os.Vibrator;
 
 public class VibratorIntensity extends ListPreference implements OnPreferenceChangeListener {
 
+    private Vibrator vibrator;
     public VibratorIntensity(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
+        this.vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
     }
 
     private static final String FILE = "/sys/class/timed_output/vibrator/amp";
@@ -53,8 +56,10 @@ public class VibratorIntensity extends ListPreference implements OnPreferenceCha
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Utils.writeValue(FILE, (String) newValue);
+        if (this.vibrator != null) {
+            this.vibrator.vibrate(300);
+        }
         return true;
     }
-
 
 }
