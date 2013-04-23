@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
 package com.cyanogenmod.settings.device;
-
 
 import java.io.IOException;
 import android.content.Context;
@@ -27,23 +25,18 @@ import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-
 public class VibratorIntensity extends ListPreference implements OnPreferenceChangeListener {
-
 
     public VibratorIntensity(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
     }
 
-
-    private static final String FILE = "/sys/class/timed_output/vibrator/pwm";
-
+    private static final String FILE = "/sys/class/timed_output/vibrator/amp";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
     }
-
 
     /**
      * Restore vibrator intensity setting from SharedPreferences. (Write to kernel.)
@@ -54,11 +47,9 @@ public class VibratorIntensity extends ListPreference implements OnPreferenceCha
             return;
         }
 
-
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_VIBRATOR_INTENSITY, "50"));
     }
-
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Utils.writeValue(FILE, (String) newValue);
@@ -67,4 +58,3 @@ public class VibratorIntensity extends ListPreference implements OnPreferenceCha
 
 
 }
-
