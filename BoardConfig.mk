@@ -42,7 +42,7 @@ ENABLE_WEBGL := true
 
 # BUILD KERNEL
 TARGET_KERNEL_CONFIG := geeb_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/geeb
+TARGET_KERNEL_SOURCE := kernel/lge/geeb_mod
 
 # BOARD_VENDOR := lge
 TARGET_NO_BOOTLOADER := true
