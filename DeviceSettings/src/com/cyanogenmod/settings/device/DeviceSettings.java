@@ -35,7 +35,7 @@ public class DeviceSettings extends FragmentActivity {
 
     public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
     public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
-	public static final String KEY_TOUCHKEY_LIGHT = "touchkey_light";
+    public static final String KEY_TOUCHKEY_LIGHT = "touchkey_light";
     public static final String KEY_TOUCHKEY_BLN = "touchkey_bln";
     public static final String KEY_VIBRATOR_INTENSITY = "vibrator_intensity";
 
@@ -144,6 +144,16 @@ public class DeviceSettings extends FragmentActivity {
 
 
         public void onTabReselected(Tab tab, FragmentTransaction ft) {
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            DeviceSettings.this.onBackPressed();
+        default:
+            return super.onOptionsItemSelected(item);
         }
     }
 }

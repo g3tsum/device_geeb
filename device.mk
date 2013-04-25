@@ -265,7 +265,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qc.sensors.wl_dis=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb
 
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
