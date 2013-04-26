@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler
 
 PRODUCT_PACKAGES += \
-    OptimusGSettings
+    GalaxyS3Settings
 
 PRODUCT_PACKAGES += \
 	hci_qcomm_init
