@@ -20,8 +20,18 @@ ro.use_data_netmgrd=true
 persist.data_netmgrd_nint=16
 persist.cne.UseCne=false
 persist.gps.qc_nlp_in_use=0
+persist.gps.qmienabled=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+persist.adb.notify=0
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=dyn
+video.accelerate.hw=1
+debug.performance.tuning=1
+debug.mdpcomp.logs=0
+debug.enable.wl_log=1
 
 # About Phone / Hardware Info
 ro.device.chipset=Qualcomm Snapdragon S4 Pro APQ8064

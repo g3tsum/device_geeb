@@ -118,7 +118,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geeb
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 TARGET_QCOM_DISPLAY_VARIANT := caf
-BOARD_HAVE_OLD_ION_API := true
+# BOARD_HAVE_OLD_ION_API := true
 
 -include vendor/houstonn/config/BoardConfigVendor.mk
 
